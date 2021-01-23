@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   patch "/items/:id" => "items#update"
   delete "/items/:id" => "items#destroy"
 
-  # resources :categories
+  # category routes
+  get "/categories" => "categories#index"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

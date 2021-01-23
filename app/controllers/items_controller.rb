@@ -8,10 +8,10 @@ class ItemsController < ApplicationController
     def create
         @item = Item.create(item_params)
         render json: @item
-    end
+    end 
 
     def show
-        @item = Item.find_by(id: params[:id])
+        @item = Item.find(params[:id])
         if @item
             render json: @item
         else 
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.permit(:name, :description, :price, :image, :quantity, :item)
+        params.permit(:name, :description, :price, :image, :quantity, :category_id, :user_id)
     end
     # :category_id, :user_id, category_id,
 end
