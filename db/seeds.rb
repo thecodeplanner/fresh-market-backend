@@ -10,9 +10,9 @@ User.destroy_all
 Item.destroy_all
 Category.destroy_all
 
-melissa = User.create(name: "Melissa", username: "Melissa123", bio: "Hi, I'm a baker!")
-bek = User.create(name: "Bek", username: "Bek123", bio: "I make the freshest food.")
-jon = User.create(name: "Jon", username: "ChefJ26", bio: "I love to farm and cook anything and everything.")
+melissa = User.create(name: "Melissa", username: "Melissa123", password:"abc123", bio: "Hi, I'm a baker!")
+bek = User.create(name: "Bek", username: "Bek123", password: "1234", bio: "I make the freshest food.")
+jon = User.create(name: "Jon", username: "ChefJ26", password: "123", bio: "I love to farm and cook anything and everything.")
 
 
 baked_goods = Category.create(name: "Baked Goods")

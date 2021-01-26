@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # login route
+  post "/login" => "auth#login"
+
   # user routes
   get "/users" => "users#index"
 

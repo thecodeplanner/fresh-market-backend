@@ -6,12 +6,18 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.create(item_params)
-        render json: @item
+        current_user = User.first
+
+        @item = current_user.items.create(item_params)
+        if @item.valid?
+            render json: @item
+        else
+            render json: {error: @item.errors.full_messages}, status: :unprocessable_entity
+        end
     end 
 
     def show
-        @item = Item.find(params[:id])
+        @item = Item.find_by(id: params[:id]) 
         if @item
             render json: @item
         else 
@@ -34,7 +40,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.permit(:name, :description, :price, :image, :quantity, :category_id, :user_id)
+        params.permit(:name, :description, :price, :image, :quantity, :category_id, :user_id, :item)
     end
     # :category_id, :user_id, category_id,
 end
