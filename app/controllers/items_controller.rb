@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
         else
             render json: {error: @item.errors.full_messages}, status: :unprocessable_entity
         end
+         
     end 
 
     def show

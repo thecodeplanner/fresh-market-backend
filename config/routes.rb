@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # login route
   post "/login" => "auth#login"
 
+  #signup route
+  post "/signup" => "auth#signup"
+
   # user routes
   get "/users" => "users#index"
 

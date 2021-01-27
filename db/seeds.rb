@@ -13,6 +13,7 @@ Category.destroy_all
 melissa = User.create(name: "Melissa", username: "Melissa123", password:"abc123", bio: "Hi, I'm a baker!")
 bek = User.create(name: "Bek", username: "Bek123", password: "1234", bio: "I make the freshest food.")
 jon = User.create(name: "Jon", username: "ChefJ26", password: "123", bio: "I love to farm and cook anything and everything.")
+ian = User.create(name: "Ian", username: "TestUser", password: "123", bio: "Test bio")
 
 
 baked_goods = Category.create(name: "Baked Goods")
