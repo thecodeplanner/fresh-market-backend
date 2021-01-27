@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     def create
         current_user = User.first
 
-        @item = current_user.items.create(item_params)
+        @item = current_user.items.create!(item_params)
         if @item.valid?
             render json: @item
         else
@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
     private
 
     def item_params
-        params.permit(:name, :description, :price, :image, :quantity, :category_id, :user_id, :item)
+        params.permit(:name, :description, :price, :image, :quantity, :user_id, :category_id)
     end
-    # :category_id, :user_id, category_id,
+
 end
